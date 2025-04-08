@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #F6F2F0;
+  overflow: hidden;
+}
+
+
+#container {
+  width: 70vw;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+img.draggable {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+
+#image1 {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+
+#image2 {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+
+#image3 {
+  max-width: 120px;
+  max-height: 120px;
+}
+
+
+#image4 {
+  max-width: 280px;
+  max-height: 280px;
+}
+
+
+#image5 {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+
+#image6 {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+
+#image7 {
+  max-width: 280px;
+  max-height: 280px;
+}
+
+
+#image8 {
+  max-width: 120px;
+  max-height: 120px;
+}
+
+
+#image9 {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+
+#image10 {
+  max-width: 280px;
+  max-height: 280px;
+}
+
+
+#image11 {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+
+
+
+img.draggable {
+  opacity: 0; /* Fade in */
+  animation: fadeIn 2s forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+
+#dragText {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  color: black;
+  position: absolute;
+  bottom: 20px; /* Position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Centering */
+  text-align: center;
+  z-index: 10;
+}
+
+
+#holdText {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: black;
+  position: absolute;
+  bottom: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+header {
+  background-color: #F6F2F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+
+nav {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+
+.logo {
+  margin-left: 70px;
+  width: 5%;
+  height: auto;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+
+li {
+  display: inline;
+}
+
+
+ul a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Satoshi";
+  color: #0D0D0E;
+  transition-duration: 0.4s;
+}
+
+
+ul a:hover {
+  color: #2F52DF;
+  font-weight: bold;
+}
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.vertical-line {
+  height: 30px;
+  width: 1px;
+  background-color: #D9D9D9;
+}
+
+
+.social-icons {
+  margin-right: 70px;
+  display: flex;
+  gap: 10px;
+}
+
+
+.social-icons a {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #F6F2F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s;
+  position: relative;
+}
+
+
+/* Hide default images */
+.social-icons a img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  transition: opacity 0.4s;
+}
+
+
+/* Change image on hover */
+.social-icons a:hover img {
+  opacity: 0;
+}
+
+
+/* Add new hover image */
+.social-icons a::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+
+/* Specific hover images */
+.social-icons a[href*="mailto:luca.pauluslucet@gmail.com"]::after {
+  background-image: url('email\ blue.png'); /* Replace with your hover image */
+}
+
+
+.social-icons a[href*="https://www.instagram.com/cyyyber_?igsh=MXZ5MTE3NzMwZWh3eg=="]::after {
+  background-image: url('instagram\ blue.png'); /* Replace with your hover image */
+}
+
+
+.social-icons a:hover::after {
+  opacity: 1;
+}
+
+/* ---------------- MOBILE STYLES ---------------- */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 100px;
+    overflow-y: auto;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo {
+    margin: 0;
+    width: 80px;
+  }
+
+  nav {
+    margin: 10px 0;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ul a {
+    font-size: 16px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .social-icons {
+    margin: 0;
+  }
+
+  #container {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  img.draggable {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  #dragText {
+    font-size: 1.2rem;
+    bottom: 60px;
+  }
+
+  #holdText {
+    font-size: 1rem;
+    bottom: 90px;
+  }
+}
